@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <header>
         <h1 class="page-title">Code Quiz</h1>
         <p>Try and answer the following code questions with a time limit. Keep in mind that incorrect answers will
@@ -20,24 +21,26 @@
     <!-- Quiz Box-->
     <div class="quiz_box">
         <header>
+            <div class="title">CODE QUIZ</div>
             <div class="timer">
                 <div class="time-text">Time left</div>
                 <div class="timer-sec">75</div>
             </div>
+            <div class="time_line"></div>
         </header>
 
         <section>
-            <div class="start-text">
+            <div class="que_text">
                 <span>What does HTML stand for?</span>
             </div>
-            <div class="option-list">
+            <div class="option_list">
                 <div class="option">
                     <span>Hyper Text Processor</span>
                     <div class="icon tick">✔</i></div>
 
                 </div>
                 <div class="option">
-                    <span>Hyper Text Markup Language</span>
+                    <span>"Hyper Text Markup Language"</span>
                     <div class="icon cross">❌</i></div>
                 </div>
                 <div class="option">
@@ -45,13 +48,23 @@
                 </div>
                 <div class="option">
                     <span>Hyper Tool Multi Language</span>
-                </div>
+                </div> 
             </div>
         </section>
 
-        <!--Quiz Box Footer-->
+        <footer>
+            <div class="total_que">
+                
+            </div>
+            <button class = "next_btn">Next</button>
 
+
+        </footer>
     </div>
+
+    <!--Quiz Box Footer-->
+
+
 
     <div class="result-box">
         <div class="icon">
@@ -67,7 +80,7 @@
     </div>
 
 
-
+    <script src="./assets/js/test-question.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 

@@ -9,6 +9,9 @@ body  {
     background: rgb(182, 168, 184);
     }
 
+
+
+
 .btn
 .quiz_box 
 .result-box {
@@ -16,6 +19,15 @@ body  {
     top: 50%;
     left: 50%;
     
+    
+}
+
+.quiz_box.activeQuiz,
+.result-box.activeResult{
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    /* transform: translate(-50%, -50%); */ */
 }
 
 .btn {
@@ -33,6 +45,9 @@ body  {
     width: 550px;
     background: #fff;
     border-radius: 5px;
+
+    pointer-events: none;
+    transition: all 0.3s ease;
 }
 
 .quiz_box header{
@@ -63,6 +78,8 @@ body  {
     border: 1px solid #fff;
     border-radius: 5px;
     padding: 0 8px;
+    color:#d4edda;
+
 
 }
 
@@ -85,22 +102,22 @@ body  {
     border: 1px solid #343a40;
 }
 
-.quiz_box section  {
+section  {
     padding: 25px 30px 20px 30px;
     background: #fff;
 }
 
-.quiz_box section .que-text{
+section .que-text{
     font-size: 25px;
     font-weight: 600;
 }
 
-.quiz_box section .option-list{
+section .option_list{
     padding: 20px 0;
     display: block;
 }
 
-section .option-list .option{
+section .option_list .option{
     background: #fff;
     border: 1px solid #343a40;
     border-radius: 5px;
@@ -113,17 +130,35 @@ section .option-list .option{
     transition: all 0.3 ease;
 }
 
-section .option-list .option:hover{
+
+
+section .option_list .option:hover{
     color: #f5f8fa;
     background: rgb(182, 168, 184);
-    border-color: rgb(10, 73, 73);
+    border-color: rgb(92, 69, 92);
 }
 
-.option-list .option:last-child  {
+section .option_list .option:last-child  {
     margin-bottom: 0px;
 }
 
-.option-list .option .icon  {
+section .option_list .option.correct{
+    color: #5b7894;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+section .option_list .option.incorrect{
+    color: #7c383f;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+section .option_list .option.disabled{
+    pointer-events: none;
+}
+
+section .option_list .option .icon  {
     height: 26px;
     width: 26px;
     border: 2px solid transparent;
@@ -131,18 +166,70 @@ section .option-list .option:hover{
     text-align: center;
     font-size: 13px;
     line-height: 24px;
+    transition: all 0.3 ease;
 }
 
-.option-list .option .icon.tick {
+.option_list .option .icon.tick {
     color: darkgreen;
     border-color: darkgreen;
     background: #d4edda;
 }
 
-.option-list .option .icon.cross {
+.option_list .option .icon.cross {
     color: darkred;
     border-color: darkred;
     background: rgb(143, 112, 112);
+}
+
+footer{
+    height: 60px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid lightgrey;
+}
+
+footer .total_que span{
+    display: flex;
+    user-select: none;
+}
+
+footer .total_que span p{
+    font-weight: 500;
+    padding: 0 5px;
+}
+
+footer .total_que span p:first-child{
+    padding-left: 0px;
+}
+
+footer button{
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    background: #007bff;
+    border: 1px solid #007bff;
+    line-height: 10px;
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+footer button:hover{
+    background: #0263ca;
+}
+
+footer button.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
 }
 
 .result-box  {
@@ -155,6 +242,9 @@ section .option-list .option:hover{
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
 
 }
 
@@ -197,6 +287,25 @@ section .option-list .option:hover{
     border-radius: 5px;
     border: 1px solid rgb(143, 112, 112);
     
+    }
+
+    .buttons button.restart{
+        color: #fff;
+        background: #007bff;
+    }
+    
+    .buttons button.restart:hover{
+        background: #0263ca;
+    }
+    
+    .buttons button.quit{
+        color: #007bff;
+        background: #fff;
+    }
+    
+    .buttons button.quit:hover{
+        color: #fff;
+        background: #007bff;
     }
 
 
