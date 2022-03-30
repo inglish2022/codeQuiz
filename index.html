@@ -11,16 +11,30 @@
 
 <body>
 
-    <header>
+    <!-- <header>
         <h1 class="page-title">Code Quiz</h1>
         <p>Try and answer the following code questions with a time limit. Keep in mind that incorrect answers will
             decrease your time by ten seconds.</p>
         <button class="btn">Start Quiz</button>
-    </header>
+    </header> -->
 
     <!-- Quiz Box-->
     <div class="quiz_box">
-        <header>
+        <div id="question-container" class="hidden">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class ="btn">Answer 1</button>
+                <button class ="btn">Answer 2</button>
+                <button class ="btn">Answer 3</button>
+                <button class ="btn">Answer 4</button>
+             </div>
+        </div>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn ">Start</button>
+            <button id="next-btn" class="next-btn btn hidden">Next</button>
+        </div>
+    
+         <header>
             <div class="title">CODE QUIZ</div>
             <div class="timer">
                 <div class="time-text">Time left</div>
@@ -28,8 +42,8 @@
             </div>
             <div class="time_line"></div>
         </header>
-
-        <section>
+    </div>
+        <!-- <section>
             <div class="que_text">
                 <span>What does HTML stand for?</span>
             </div>
@@ -50,9 +64,9 @@
                     <span>Hyper Tool Multi Language</span>
                 </div> 
             </div>
-        </section>
+        </section> -->
 
-        <footer>
+        <!-- <footer>
             <div class="total_que">
                 
             </div>
@@ -60,12 +74,12 @@
 
 
         </footer>
-    </div>
+    </div> -->
 
     <!--Quiz Box Footer-->
 
 
-
+<!-- 
     <div class="result-box">
         <div class="icon">
             <i>👌</i>
@@ -77,10 +91,10 @@
     <div class="buttons">
         <button class="restart">Restart Quiz</button>
         <button class="quit">Quit Quiz</button>
-    </div>
+    </div> --> -->
 
 
-    <script src="./assets/js/test-question.js"></script>
+    
     <script src="./assets/js/script.js"></script>
 </body>
 
