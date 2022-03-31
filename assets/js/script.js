@@ -31,9 +31,13 @@ btn.addEventListener("click", function () {
 function updateTime ()  {
     timeValue--;
     timerEl.textContent=timeValue
-    // if (timeValue <= 0)  {
-        // endQuiz()
-    // }
+    if (timeValue <= 0)  {
+         endQuiz()
+     }
+}
+
+function endQuiz()  {
+    clearInterval(timerId);
 }
 
 
