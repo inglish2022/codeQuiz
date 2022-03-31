@@ -9,6 +9,9 @@ const answerButtonsElement = document.getElementById("answer-buttons")
 
 let shuffledQuestions, currentQuestionIndex
 let timeValue = 75
+var timerId;
+
+var timerEl = document.querySelector(".timer-sec")
 
 startButton.addEventListener("click", startGame)
 nextButton.addEventListener("click", () =>  {
@@ -21,9 +24,17 @@ btn.addEventListener("click", function () {
     questionContainerElement.classList.add("question");
     // showQuestions(que_count);
     // queCounter(que_numb);
-    startTimer(timeValue);
+    
 
 })
+
+function updateTime ()  {
+    timeValue--;
+    timerEl.textContent=timeValue
+    // if (timeValue <= 0)  {
+        // endQuiz()
+    // }
+}
 
 
 
@@ -33,6 +44,8 @@ function startGame()  {
     shuffledQuestions = questions.sort(() =>Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove("hidden")
+    timerId = setInterval(updateTime, 1000)
+    timerEl.textContent=timeValue
    
    
     setNextQuestion() 
@@ -53,6 +66,7 @@ function showQuestion(question) {
         button.classList.add("btn")
         if (answer.correct)  {
             button.dataset.correct = answer.correct
+            console.log ("correct")
         }
 
         button.addEventListener("click", selectAnswer)
@@ -88,6 +102,8 @@ function setStatusClass(element, correct)  {
     if  (correct)  {
         element.classList.add("correct")
     } else  {
+        timeValue - 10
+        timerEl.textContent = timeValue
         element.classList.add("wrong")
     }
 }
