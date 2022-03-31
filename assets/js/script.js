@@ -26,6 +26,7 @@ btn.addEventListener("click", function () {
 })
 
 
+
 function startGame()  {
     console.log("Started")
     startButton.classList.add("hidden")
@@ -324,7 +325,7 @@ const questions = [
 //     }
 // }
 
-// function startTimer(time) {
+//   function startTimer(time) {
 //     counter = setInterval(timer, 1000);
 //     function timer() {
 //         timeCount.textContent = time; //changing the value of timeCount with time value
