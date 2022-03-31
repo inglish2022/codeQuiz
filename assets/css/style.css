@@ -55,14 +55,23 @@ body  {
 
     .btn:hover  {
         border-color: black;
+        color: #f5f8fa;
+        background: rgb(182, 168, 184);
+        border-color: rgb(92, 69, 92);
     }
 
     .btn.correct  {
-        --hue: var(--hue-correct);
+        color: green;
+        color: #5b7894;
+        background: #d4edda;
+        border: 1px solid #c3e6cb;
     }
 
     .btn.wrong  {
-        --hue:  var(--hue-wrong);
+        color: red;
+        color: #7c383f;
+        background: #f8d7da;
+        border: 1px solid #f5c6cb;
     }
 
     .start-btn, .next-btn  {

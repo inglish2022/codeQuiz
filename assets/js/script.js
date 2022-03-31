@@ -57,16 +57,22 @@ function setNextQuestion()  {
     resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
-
+function questionClick ()  {
+    if (this.value !== questions[currentQuestionIndex].answers.correct) {
+        timeValue -= 10
+        timerEl.textContent = timeValue}
+}
 function showQuestion(question) {
     questionElement.innerText = question.question
     question.answers.forEach(answer =>  {
         const button = document.createElement("button")
         button.innerText = answer.text
         button.classList.add("btn")
+        button.onclick = questionClick
+
         if (answer.correct)  {
             button.dataset.correct = answer.correct
-            console.log ("correct")
+            
         }
 
         button.addEventListener("click", selectAnswer)
@@ -101,6 +107,7 @@ function setStatusClass(element, correct)  {
     clearStatusClass(element)
     if  (correct)  {
         element.classList.add("correct")
+        console.log ("correct")
     } else  {
         timeValue - 10
         timerEl.textContent = timeValue
@@ -119,7 +126,7 @@ const questions = [
         answers: [
             {  text: "Hyper Test Processing", correct: false  },
             {  text:  "Hyper Text Markup Language", correct: true},
-            {  text:  "Hyper Text Multiple Language", coreect:  false},
+            {  text:  "Hyper Text Multiple Language", correct:  false},
             {  text:  "Hyper Tool Multi Language", correct: false}
         ]
     },
