@@ -104,6 +104,35 @@ body  {
         box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.1);
     }
 
+    .container {
+        position:  absolute;
+        top: 50%;
+        left: 50%;
+
+    }
+
+    .container  {
+        background: #fff;
+        width: 450px;
+        padding: 25px 30px;
+        border-radius: 5px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    
+    }
+
+    /* .container .activeResult{
+        opacity: 1;
+        z-index: 5;
+        pointer-events: auto;
+        transform: translate(-50%, -50%); */ */
+     */
 
 
 
@@ -124,7 +153,7 @@ body  {
     z-index: 5;
     pointer-events: auto;
     /* transform: translate(-50%, -50%); */ */
-}
+
 
 /* .btn {
     font-size: 20px;

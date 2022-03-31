@@ -78,10 +78,8 @@ function showQuestion(question) {
         button.classList.add("btn")
         button.onclick = questionClick
 
-        // if (answer.correct) {
-        //     button.dataset.correct = answer.correct
+        button.setAttribute("data-correct", question.correct)
 
-        // }
 
         button.addEventListener("click", selectAnswer)
         answerButtonsElement.appendChild(button)
@@ -98,11 +96,14 @@ function resetState() {
 
 function selectAnswer(e) {
     const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
-    Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
+    let correct = selectedButton.dataset.correct
+    if (selectedButton.textContent === correct) {
+        correct = true
+    } else {
+        correct = false
+    }
+    setStatusClass(selectedButton, correct)
+
     if (shuffledQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove("hidden")
     } else {
@@ -120,7 +121,7 @@ function setStatusClass(element, correct) {
         timeValue - 10
         timerEl.textContent = timeValue
         element.classList.add("wrong")
-        
+
     }
 }
 
